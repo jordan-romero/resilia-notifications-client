@@ -1,12 +1,12 @@
-import './App.css';
 import NotificationList from './components/NotificationList/NotificationList';
+import Theme from './utils/theme';
 
 function App() {
   return (
-    <div className="App">
+    <Theme>
       <NotificationList />
       Testing
-    </div>
+    </Theme>
   );
 }
 
