@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getNotifications } from '../../utils/notifications';
-import { Button } from '../common/Button';
-import Card from '../Card/Card';
-import { Heading2, Text } from '../common/Typography';
+import { dateFormatter } from '../../utils/utils';
+import Card from '../Card';
+import { Heading3, Text } from '../common/Typography';
 import { Box } from '../common/Box'
 
 const NotificationList = () => {
@@ -14,14 +14,22 @@ const NotificationList = () => {
   }, []);
 
   const [notifications, setNotifications] = useState([])
+  console.log(notifications, 'notifications')
 
   return (
     <Box>
       <div>
         {notifications?.map((notification, index) => (
           <Card key={index}>
-            <Heading2>{notification.title}</Heading2>
-            <Text color="blue">{notification.preview}</Text>
+            <Card.Header>
+              <Heading3>{notification.title}</Heading3>
+              <Text color="blue">From: {notification.sender_name}</Text>
+
+            </Card.Header>
+            <Card.Body>
+              <Text flexBasis="50%">Preview: {notification.preview}</Text>
+              <Text>{dateFormatter(notification.created_at)}</Text>
+            </Card.Body>
           </Card>
         ))}
       </div>

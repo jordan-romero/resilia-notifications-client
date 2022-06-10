@@ -1,20 +1,18 @@
 import styled from "styled-components";
 
-export const Heading2 = styled.h2`
-  font-size: 6rem; 
+export const Heading3 = styled.h3`
+  font-size: 3rem; 
   
 `
 
 const StyledText = styled.p`
   font-size: 1.5rem;
-  color: ${(props) => props.color});
-  background-color: white; 
+  color: ${props => props.color};
+  flex-basis: ${props => props.flexBasis}; 
   height: auto; 
-  width: auto; 
 
 `;
 
-export const Text = ({ children, color }) => {
-  console.log(color)
-  return <StyledText props={color}>{children}</StyledText>
+export const Text = ({ children, color, flexBasis }) => {
+  return <StyledText color={color} flexBasis={flexBasis}>{children}</StyledText>
 }

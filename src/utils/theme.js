@@ -8,7 +8,8 @@ const theme = {
     primary: "#d9594c",
     secondary: "#FBF2B1",
     secondaryLight: "#fefcec",
-    gray: "#36313D"
+    gray: "#36313D",
+    grayLight: "#f4f5f6"
   },
   fontSizes: {
     small: "1em",
