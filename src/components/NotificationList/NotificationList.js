@@ -4,6 +4,7 @@ import { dateFormatter } from '../../utils/utils';
 import Card from '../Card';
 import { Heading3, Text } from '../common/Typography';
 import { Box } from '../common/Box'
+import { Button } from '../common/Button'
 
 const NotificationList = () => {
 
@@ -23,12 +24,15 @@ const NotificationList = () => {
           <Card key={index}>
             <Card.Header>
               <Heading3>{notification.title}</Heading3>
-              <Text color="blue">From: {notification.sender_name}</Text>
+              <Box>
+                <Text>From: {notification.sender_name}</Text>
+                <Text>{dateFormatter(notification.created_at)}</Text>
+              </Box>
 
             </Card.Header>
             <Card.Body>
-              <Text flexBasis="50%">Preview: {notification.preview}</Text>
-              <Text>{dateFormatter(notification.created_at)}</Text>
+              <Text flexBasis="50%">Subject: {notification.preview}</Text>
+              <Button>View More</Button>
             </Card.Body>
           </Card>
         ))}
