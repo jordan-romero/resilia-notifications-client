@@ -5,7 +5,7 @@ export const Button = styled.button`
     border-radius: .25rem;
     border: none;
     padding: .75rem;
-    background-color: red;
+    background-color: ${props => props.theme.colors.primary};
     color: white;
     outline: none;
     cursor: pointer;
@@ -13,14 +13,14 @@ export const Button = styled.button`
     font-size: 1rem;
 
     &:hover {
-        background-color: blue;
+        background-color: ${props => props.theme.colors.primaryDark};
         color: white;
-        box-shadow: 0 1rem 2rem rgba(black, .40);
+        box-shadow: 0 1rem 2rem rgba(14, 19, 31,  .30);
         transform: translateY(-2px);
     }
       
     &:active {
-        box-shadow: 0 1rem 1rem rgba(black, 0.25);
+        box-shadow: 0 1rem 2rem rgba(14, 19, 31,  .30);
         transform: translateY(0);
     }
 

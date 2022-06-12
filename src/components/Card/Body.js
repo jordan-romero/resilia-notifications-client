@@ -6,6 +6,7 @@ const Body = styled.div`
     flex-wrap: wrap; 
     align-items: center; 
     height: 50%; 
+    padding: .75rem; 
     background-color: ${props => props.theme.colors.grayLight}; 
     border-bottom-right-radius: 10px; 
     border-bottom-left-radius: 10px;

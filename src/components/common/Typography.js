@@ -6,13 +6,23 @@ export const Heading3 = styled.h3`
 `
 
 const StyledText = styled.p`
-  font-size: 1.5rem;
+  font-size: ${props => props.fontSize};
   color: ${props => props.color};
   flex-basis: ${props => props.flexBasis}; 
-  height: auto; 
-
+  text-align: ${props => props.textAlign};
+  display: ${props => props.display};
+  padding: ${props => props.padding}; 
 `;
 
-export const Text = ({ children, color, flexBasis }) => {
-  return <StyledText color={color} flexBasis={flexBasis}>{children}</StyledText>
+export const Text = ({ children, color, flexBasis, fontSize, textAlign, display, padding }) => {
+  return <StyledText
+    color={color}
+    flexBasis={flexBasis}
+    fontSize={fontSize}
+    textAlign={textAlign}
+    display={display}
+    padding={padding}
+  >
+    {children}
+  </StyledText>
 }
