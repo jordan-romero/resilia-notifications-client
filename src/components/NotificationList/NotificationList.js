@@ -11,14 +11,21 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const NotificationList = () => {
 
-  useEffect(() => {
-    getNotifications().then((data) => {
-      setNotifications(data);
-    });
-  }, []);
-
   const [notifications, setNotifications] = useState([])
   const [activeCards, setActiveCards] = useState([])
+
+  useEffect(() => {
+    if (localStorage.getItem('notifications')) {
+      setNotifications(JSON.parse(localStorage.notifications))
+      console.log(localStorage)
+    } else {
+      getNotifications().then((data) => {
+        setNotifications(data);
+        localStorage.setItem('notifications', JSON.stringify(data))
+        console.log(localStorage, 'testing')
+      })
+    }
+  }, []);
 
   const onClickHandler = (id) => {
     if (activeCards.includes(id)) {
@@ -36,6 +43,7 @@ const NotificationList = () => {
       const filteredNotifications = notifications
         .filter((filteredNotification) => filteredNotification !== notification)
       setNotifications(filteredNotifications)
+      localStorage.setItem('notifications', JSON.stringify(filteredNotifications))
     }
   }
 
