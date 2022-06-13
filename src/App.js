@@ -5,7 +5,6 @@ function App() {
   return (
     <Theme>
       <NotificationList />
-      Testing
     </Theme>
   );
 }
