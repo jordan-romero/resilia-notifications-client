@@ -1,4 +1,4 @@
-import NotificationList from './components/NotificationList/NotificationList';
+import NotificationList from './containers/NotificationList/NotificationList';
 import Theme from './utils/theme';
 
 function App() {
